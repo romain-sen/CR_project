@@ -166,6 +166,12 @@
   <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 </owl:DatatypeProperty>
 
+<owl:DatatypeProperty rdf:about="#nbLikes">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Comment"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
 <owl:DatatypeProperty rdf:about="#aPourEmotion">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#Emotion"/>
@@ -66214,6 +66220,7 @@
   <comments_on rdf:resource="#9247265"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wow, what a surprise ! The plan of silver is to become not only the champion of the valley but also of the world ?! 
 Couldn’t have guess that… 👏👏</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31403030">
@@ -66221,6 +66228,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9333705"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It’s so frustrating to see how easy it could have been to arrest this guy but they didn’t…</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31413412">
@@ -66228,6 +66236,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6104951"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Never too late to start a good show !</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31417213">
@@ -66235,6 +66244,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6104952"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Better call Marty</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31440434">
@@ -66242,6 +66252,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6172297"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">That’s rare to have a show with smarts and logic scenarios, it changes from usual show with kids doing the stupidest decision all time just to continue the show. I love Ozarks !!</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31529533">
@@ -66249,6 +66260,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6778625"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ok great Darlene, you killed Jacob and now what ? Shoot on the mexicains ? She is so dead in the next episode lol</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31616851">
@@ -66256,6 +66268,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#7620104"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">That was one of the saddest show episodes I ever seen 😢</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31802354">
@@ -66263,6 +66276,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9138258"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What an ending !! That was awesome, so many emotions, I ended up been sad, but also happy and surprised</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31913600">
@@ -66270,6 +66284,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#5626064"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I know I am starting a bit late but damn, first episode and we’re so in it ! I mean we know there’s something secret and dark with the direction, there is a enigma that a scary dude try to solve and there are new bugs that make the robot to kinda revolt… spicy</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31949646">
@@ -66277,6 +66292,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#5765511"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The man is smart enough to build robots so realistic you cannot tell the deference with humans, and you really think some financial clowns guys who want to steal his work can beat him ?</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32171243">
@@ -66284,6 +66300,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6576173"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Please where can I vote for Taylor for this episode 😭😭</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32197192">
@@ -66291,6 +66308,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9100817"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Do you love me ?</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32395954">
@@ -66298,6 +66316,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238600"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The cinematography is so insane and the atmosphere that emerges is so captivating I love it !</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32406536">
@@ -66305,6 +66324,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238601"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damn who is spying who it’s more complicated that I thought</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32421533">
@@ -66312,6 +66332,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238602"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I have trouble saying where it is going</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32426747">
@@ -66319,6 +66340,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238603"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">So sad we don’t see Kim and Nicholas sitting together in the bar and talking as friends 😢 I would have shed a tear</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32606931">
@@ -66326,6 +66348,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9354873"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I love so much the mentality : they are all awesome but there also all fans of each other and they respect everyone some much I love this sport’s mentality !</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32621287">
@@ -66333,6 +66356,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9577091"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bbulkup made me laugh so hard I love that guy! I first thought he was so arrogant but then when he said « of course I have regret, please do a season 2 or 3 » I realized he just was so funny and was here to get fun 😭</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32840118">
@@ -66340,6 +66364,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9010223"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Why do the guy takes millions of precautions because people want to kill him, but he still sleep at his house that everybody know the address ??</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32847523">
@@ -66347,6 +66372,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9010224"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I really was sad when he bought the drugs thinking he was going mad… and then 🤩</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33012136">
@@ -66354,6 +66380,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607712"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This guy is like the embodiment of wisdom 😭</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">393</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33025590">
@@ -66361,6 +66388,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607716"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">My poor guy, he’ll never clear his name 😭</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33025625">
@@ -66368,6 +66396,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607716"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rose with the stick</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33033320">
@@ -66376,6 +66405,7 @@ Couldn’t have guess that… 👏👏</aPourContenu>
   <comments_on rdf:resource="#9607718"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">That was such a bold move from
 Rose</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1703</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33237592">
@@ -66383,6 +66413,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9706788"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Again these fucking empty weapon boxes instead of the gold 😭</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33337268">
@@ -66390,6 +66421,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9079005"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I’m starting to get bored but what a plot it would be to see zacarias destroying the trafiquants because they try to black mail him</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33431516">
@@ -66397,6 +66429,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#8987962"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kingsman vibes</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33676717">
@@ -66404,6 +66437,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564639"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Explosion, guns and cars : the secret combo for nice episodes</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33681004">
@@ -66411,6 +66445,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564639"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">They make à deadly competition to get a dangerous job, and there are almost only teenagers to participate</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33944060">
@@ -66418,6 +66453,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564626"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ohhhh he knows what he’s doing</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33944073">
@@ -66425,6 +66461,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564626"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Noooooo don’t stoppppp !!!</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33962635">
@@ -66432,6 +66469,7 @@ Rose</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564630"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">My favorite part of the show</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34024327">
@@ -66440,6 +66478,7 @@ Rose</aPourContenu>
   <comments_on rdf:resource="#9782581"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This documentary is so great because we all know Arnold’s exploits, that he is the best on so many things… but the gold is his mindset ✨
 He really have his head on his shoulder I love it</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34666001">
@@ -66447,6 +66486,7 @@ He really have his head on his shoulder I love it</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#10002429"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">« he has been killed too fast » but guys, we’re talking about sully. That’s suprising the guy isn’t dead in the first episode when he pissed of Sully</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34759499">
@@ -66454,6 +66494,7 @@ He really have his head on his shoulder I love it</aPourContenu>
   <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#10002433"/>
   <aPourContenu rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damn, Stephan breaking the circle of violence was breathtaking… respect bruv</aPourContenu>
+  <nbLikes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</nbLikes>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9279985-22659137-33">
