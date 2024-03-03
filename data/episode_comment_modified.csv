@@ -1,39 +1,39 @@
-episode_id,tv_show_name,episode_season_number,episode_number,user_id,comment,nb_likes,created_at,updated_at
-9247265,Cobra Kai,5,7,22659137,"Wow, what a surprise ! The plan of silver is to become not only the champion of the valley but also of the world ?! 
+comment_id,episode_id,tv_show_name,episode_season_number,episode_number,user_id,comment,nb_likes,created_at,updated_at
+31382081,9247265,Cobra Kai,5,7,22659137,"Wow, what a surprise ! The plan of silver is to become not only the champion of the valley but also of the world ?! 
 Couldn’t have guess that… 👏👏",0,2022-10-06 13:21:54,2022-10-06 13:21:55
-9333705,Monster (2022),1,2,22659137,It’s so frustrating to see how easy it could have been to arrest this guy but they didn’t…,4,2022-10-08 12:54:38,2022-12-01 13:33:06
-6104951,Ozark,1,1,22659137,Never too late to start a good show !,0,2022-10-09 14:04:44,2022-10-09 14:04:47
-6104952,Ozark,1,2,22659137,Better call Marty,5,2022-10-09 21:00:12,2023-04-11 11:40:31
-6172297,Ozark,1,9,22659137,"That’s rare to have a show with smarts and logic scenarios, it changes from usual show with kids doing the stupidest decision all time just to continue the show. I love Ozarks !!",0,2022-10-11 21:12:53,2022-10-11 21:12:53
-6778625,Ozark,2,9,22659137,"Ok great Darlene, you killed Jacob and now what ? Shoot on the mexicains ? She is so dead in the next episode lol",0,2022-10-20 13:35:49,2022-10-20 13:35:49
-7620104,Ozark,3,9,22659137,That was one of the saddest show episodes I ever seen 😢,0,2022-10-28 21:25:26,2022-10-28 21:25:26
-9138258,Ozark,4,14,22659137,"What an ending !! That was awesome, so many emotions, I ended up been sad, but also happy and surprised",0,2022-11-17 12:05:33,2022-11-17 12:05:36
-5626064,Westworld,1,1,22659137,"I know I am starting a bit late but damn, first episode and we’re so in it ! I mean we know there’s something secret and dark with the direction, there is a enigma that a scary dude try to solve and there are new bugs that make the robot to kinda revolt… spicy",1,2022-11-28 14:43:54,2023-11-03 23:02:59
-5765511,Westworld,1,7,22659137,"The man is smart enough to build robots so realistic you cannot tell the deference with humans, and you really think some financial clowns guys who want to steal his work can beat him ?",1,2022-12-02 21:29:22,2023-05-27 21:21:00
-6576173,Barry,1,5,22659137,Please where can I vote for Taylor for this episode 😭😭,0,2022-12-28 16:16:52,2022-12-28 16:16:52
-9100817,Barry,3,2,22659137,Do you love me ?,0,2022-12-31 12:44:01,2022-12-31 12:44:02
-9238600,A Spy Among Friends,1,3,22659137,The cinematography is so insane and the atmosphere that emerges is so captivating I love it !,16,2023-01-20 08:39:27,2023-09-26 17:34:41
-9238601,A Spy Among Friends,1,4,22659137,Damn who is spying who it’s more complicated that I thought,29,2023-01-21 12:30:14,2023-09-28 06:09:35
-9238602,A Spy Among Friends,1,5,22659137,I have trouble saying where it is going,7,2023-01-22 22:35:16,2023-09-30 06:21:36
-9238603,A Spy Among Friends,1,6,22659137,So sad we don’t see Kim and Nicholas sitting together in the bar and talking as friends 😢 I would have shed a tear,9,2023-01-23 09:38:53,2023-09-30 13:58:23
-9354873,Physical: 100,1,1,22659137,I love so much the mentality : they are all awesome but there also all fans of each other and they respect everyone some much I love this sport’s mentality !,0,2023-02-11 11:35:23,2023-02-11 11:35:23
-9577091,Physical: 100,1,3,22659137,"Bbulkup made me laugh so hard I love that guy! I first thought he was so arrogant but then when he said « of course I have regret, please do a season 2 or 3 » I realized he just was so funny and was here to get fun 😭",7,2023-02-12 21:27:28,2023-12-07 19:27:06
-9010223,The Terminal List,1,2,22659137,"Why do the guy takes millions of precautions because people want to kill him, but he still sleep at his house that everybody know the address ??",1,2023-03-08 12:58:29,2023-06-02 08:40:10
-9010224,The Terminal List,1,3,22659137,I really was sad when he bought the drugs thinking he was going mad… and then 🤩,3,2023-03-09 08:54:16,2023-05-04 21:32:26
-9607712,The Night Agent,1,2,22659137,This guy is like the embodiment of wisdom 😭,393,2023-03-26 13:23:43,2024-01-01 23:59:42
-9607716,The Night Agent,1,6,22659137,"My poor guy, he’ll never clear his name 😭",1,2023-03-27 21:47:10,2023-04-09 23:13:02
-9607716,The Night Agent,1,6,22659137,Rose with the stick,52,2023-03-27 21:50:40,2023-12-28 21:11:33
-9607718,The Night Agent,1,8,22659137,"That was such a bold move from
+31403030,9333705,Monster (2022),1,2,22659137,It’s so frustrating to see how easy it could have been to arrest this guy but they didn’t…,4,2022-10-08 12:54:38,2022-12-01 13:33:06
+31413412,6104951,Ozark,1,1,22659137,Never too late to start a good show !,0,2022-10-09 14:04:44,2022-10-09 14:04:47
+31417213,6104952,Ozark,1,2,22659137,Better call Marty,5,2022-10-09 21:00:12,2023-04-11 11:40:31
+31440434,6172297,Ozark,1,9,22659137,"That’s rare to have a show with smarts and logic scenarios, it changes from usual show with kids doing the stupidest decision all time just to continue the show. I love Ozarks !!",0,2022-10-11 21:12:53,2022-10-11 21:12:53
+31529533,6778625,Ozark,2,9,22659137,"Ok great Darlene, you killed Jacob and now what ? Shoot on the mexicains ? She is so dead in the next episode lol",0,2022-10-20 13:35:49,2022-10-20 13:35:49
+31616851,7620104,Ozark,3,9,22659137,That was one of the saddest show episodes I ever seen 😢,0,2022-10-28 21:25:26,2022-10-28 21:25:26
+31802354,9138258,Ozark,4,14,22659137,"What an ending !! That was awesome, so many emotions, I ended up been sad, but also happy and surprised",0,2022-11-17 12:05:33,2022-11-17 12:05:36
+31913600,5626064,Westworld,1,1,22659137,"I know I am starting a bit late but damn, first episode and we’re so in it ! I mean we know there’s something secret and dark with the direction, there is a enigma that a scary dude try to solve and there are new bugs that make the robot to kinda revolt… spicy",1,2022-11-28 14:43:54,2023-11-03 23:02:59
+31949646,5765511,Westworld,1,7,22659137,"The man is smart enough to build robots so realistic you cannot tell the deference with humans, and you really think some financial clowns guys who want to steal his work can beat him ?",1,2022-12-02 21:29:22,2023-05-27 21:21:00
+32171243,6576173,Barry,1,5,22659137,Please where can I vote for Taylor for this episode 😭😭,0,2022-12-28 16:16:52,2022-12-28 16:16:52
+32197192,9100817,Barry,3,2,22659137,Do you love me ?,0,2022-12-31 12:44:01,2022-12-31 12:44:02
+32395954,9238600,A Spy Among Friends,1,3,22659137,The cinematography is so insane and the atmosphere that emerges is so captivating I love it !,16,2023-01-20 08:39:27,2023-09-26 17:34:41
+32406536,9238601,A Spy Among Friends,1,4,22659137,Damn who is spying who it’s more complicated that I thought,29,2023-01-21 12:30:14,2023-09-28 06:09:35
+32421533,9238602,A Spy Among Friends,1,5,22659137,I have trouble saying where it is going,7,2023-01-22 22:35:16,2023-09-30 06:21:36
+32426747,9238603,A Spy Among Friends,1,6,22659137,So sad we don’t see Kim and Nicholas sitting together in the bar and talking as friends 😢 I would have shed a tear,9,2023-01-23 09:38:53,2023-09-30 13:58:23
+32606931,9354873,Physical: 100,1,1,22659137,I love so much the mentality : they are all awesome but there also all fans of each other and they respect everyone some much I love this sport’s mentality !,0,2023-02-11 11:35:23,2023-02-11 11:35:23
+32621287,9577091,Physical: 100,1,3,22659137,"Bbulkup made me laugh so hard I love that guy! I first thought he was so arrogant but then when he said « of course I have regret, please do a season 2 or 3 » I realized he just was so funny and was here to get fun 😭",7,2023-02-12 21:27:28,2023-12-07 19:27:06
+32840118,9010223,The Terminal List,1,2,22659137,"Why do the guy takes millions of precautions because people want to kill him, but he still sleep at his house that everybody know the address ??",1,2023-03-08 12:58:29,2023-06-02 08:40:10
+32847523,9010224,The Terminal List,1,3,22659137,I really was sad when he bought the drugs thinking he was going mad… and then 🤩,3,2023-03-09 08:54:16,2023-05-04 21:32:26
+33012136,9607712,The Night Agent,1,2,22659137,This guy is like the embodiment of wisdom 😭,393,2023-03-26 13:23:43,2024-01-01 23:59:42
+33025590,9607716,The Night Agent,1,6,22659137,"My poor guy, he’ll never clear his name 😭",1,2023-03-27 21:47:10,2023-04-09 23:13:02
+33025625,9607716,The Night Agent,1,6,22659137,Rose with the stick,52,2023-03-27 21:50:40,2023-12-28 21:11:33
+33033320,9607718,The Night Agent,1,8,22659137,"That was such a bold move from
 Rose",1703,2023-03-28 20:52:02,2024-01-01 18:54:37
-9706788,Florida Man,1,7,22659137,Again these fucking empty weapon boxes instead of the gold 😭,2,2023-04-19 21:49:28,2023-06-12 11:17:27
-9079005,The Marked Heart,1,5,22659137,I’m starting to get bored but what a plot it would be to see zacarias destroying the trafiquants because they try to black mail him,1,2023-04-30 17:44:13,2023-08-10 17:18:19
-8987962,Citadel,1,1,22659137,Kingsman vibes,0,2023-05-10 19:22:18,2023-05-10 19:22:18
-9564639,Black Knight,1,3,22659137,"Explosion, guns and cars : the secret combo for nice episodes",1,2023-06-05 20:40:16,2023-06-06 00:29:07
-9564639,Black Knight,1,3,22659137,"They make à deadly competition to get a dangerous job, and there are almost only teenagers to participate",1,2023-06-06 07:07:35,2023-07-31 22:12:45
-9564626,Bloodhounds (2023),1,4,22659137,Ohhhh he knows what he’s doing,0,2023-07-03 21:15:58,2023-07-03 21:15:58
-9564626,Bloodhounds (2023),1,4,22659137,Noooooo don’t stoppppp !!!,0,2023-07-03 21:17:26,2023-07-03 21:17:26
-9564630,Bloodhounds (2023),1,7,22659137,My favorite part of the show,0,2023-07-05 21:52:38,2023-07-05 21:52:38
-9782581,Arnold,1,1,22659137,"This documentary is so great because we all know Arnold’s exploits, that he is the best on so many things… but the gold is his mindset ✨
+33237592,9706788,Florida Man,1,7,22659137,Again these fucking empty weapon boxes instead of the gold 😭,2,2023-04-19 21:49:28,2023-06-12 11:17:27
+33337268,9079005,The Marked Heart,1,5,22659137,I’m starting to get bored but what a plot it would be to see zacarias destroying the trafiquants because they try to black mail him,1,2023-04-30 17:44:13,2023-08-10 17:18:19
+33431516,8987962,Citadel,1,1,22659137,Kingsman vibes,0,2023-05-10 19:22:18,2023-05-10 19:22:18
+33676717,9564639,Black Knight,1,3,22659137,"Explosion, guns and cars : the secret combo for nice episodes",1,2023-06-05 20:40:16,2023-06-06 00:29:07
+33681004,9564639,Black Knight,1,3,22659137,"They make à deadly competition to get a dangerous job, and there are almost only teenagers to participate",1,2023-06-06 07:07:35,2023-07-31 22:12:45
+33944060,9564626,Bloodhounds (2023),1,4,22659137,Ohhhh he knows what he’s doing,0,2023-07-03 21:15:58,2023-07-03 21:15:58
+33944073,9564626,Bloodhounds (2023),1,4,22659137,Noooooo don’t stoppppp !!!,0,2023-07-03 21:17:26,2023-07-03 21:17:26
+33962635,9564630,Bloodhounds (2023),1,7,22659137,My favorite part of the show,0,2023-07-05 21:52:38,2023-07-05 21:52:38
+34024327,9782581,Arnold,1,1,22659137,"This documentary is so great because we all know Arnold’s exploits, that he is the best on so many things… but the gold is his mindset ✨
 He really have his head on his shoulder I love it",0,2023-07-12 23:04:29,2023-07-12 23:04:29
-10002429,Top Boy,5,3,22659137,"« he has been killed too fast » but guys, we’re talking about sully. That’s suprising the guy isn’t dead in the first episode when he pissed of Sully",0,2023-09-24 22:05:17,2023-09-24 22:05:17
-10002433,Top Boy,5,6,22659137,"Damn, Stephan breaking the circle of violence was breathtaking… respect bruv",4,2023-10-06 12:18:55,2023-11-25 02:07:16
+34666001,10002429,Top Boy,5,3,22659137,"« he has been killed too fast » but guys, we’re talking about sully. That’s suprising the guy isn’t dead in the first episode when he pissed of Sully",0,2023-09-24 22:05:17,2023-09-24 22:05:17
+34759499,10002433,Top Boy,5,6,22659137,"Damn, Stephan breaking the circle of violence was breathtaking… respect bruv",4,2023-10-06 12:18:55,2023-11-25 02:07:16
