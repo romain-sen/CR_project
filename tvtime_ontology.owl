@@ -8,9 +8,16 @@
 
 <owl:Ontology rdf:about="http://example.org/onto"/>
 
-<owl:ObjectProperty rdf:about="#posts">
+<owl:ObjectProperty rdf:about="#posts_by">
   <rdfs:domain rdf:resource="#Comment"/>
   <rdfs:range rdf:resource="#User"/>
+  <owl:inverseOf rdf:resource="#posts_comment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#posts_comment">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Comment"/>
+  <owl:inverseOf rdf:resource="#posts_by"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#comments_on">
@@ -28,9 +35,16 @@
   <rdfs:range rdf:resource="#TVShow"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#had_stopped">
+<owl:ObjectProperty rdf:about="#is_stopped_by">
+  <rdfs:domain rdf:resource="#TVShow"/>
+  <rdfs:range rdf:resource="#User"/>
+  <owl:inverseOf rdf:resource="#has_stopped"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_stopped">
   <rdfs:domain rdf:resource="#User"/>
   <rdfs:range rdf:resource="#TVShow"/>
+  <owl:inverseOf rdf:resource="#is_stopped_by"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#has_watched">
@@ -5436,7 +5450,6 @@
   <follows rdf:resource="#Friends"/>
   <follows rdf:resource="#Death Note"/>
   <follows rdf:resource="#America's Got Talent"/>
-  <had_stopped rdf:resource="#America's Got Talent"/>
   <follows rdf:resource="#Breaking Bad"/>
   <follows rdf:resource="#One Piece"/>
   <follows rdf:resource="#Sons of Anarchy"/>
@@ -5444,16 +5457,12 @@
   <follows rdf:resource="#Game of Thrones"/>
   <follows rdf:resource="#Sherlock"/>
   <follows rdf:resource="#3%"/>
-  <had_stopped rdf:resource="#3%"/>
   <follows rdf:resource="#Hunter x Hunter (2011)"/>
   <follows rdf:resource="#Top Boy"/>
   <follows rdf:resource="#Black Mirror"/>
   <follows rdf:resource="#American Gods"/>
-  <had_stopped rdf:resource="#American Gods"/>
   <follows rdf:resource="#Arrow"/>
-  <had_stopped rdf:resource="#Arrow"/>
   <follows rdf:resource="#Sword Art Online"/>
-  <had_stopped rdf:resource="#Sword Art Online"/>
   <follows rdf:resource="#Vikings"/>
   <follows rdf:resource="#Attack on Titan"/>
   <follows rdf:resource="#Sense8"/>
@@ -5467,7 +5476,6 @@
   <follows rdf:resource="#Marvel's Daredevil"/>
   <follows rdf:resource="#BoJack Horseman"/>
   <follows rdf:resource="#Narcos"/>
-  <had_stopped rdf:resource="#Narcos"/>
   <follows rdf:resource="#Assassination Classroom"/>
   <follows rdf:resource="#Marvel's Jessica Jones"/>
   <follows rdf:resource="#F is for Family"/>
@@ -5475,13 +5483,10 @@
   <follows rdf:resource="#Lucifer"/>
   <follows rdf:resource="#Westworld"/>
   <follows rdf:resource="#Marvel's Luke Cage"/>
-  <had_stopped rdf:resource="#Marvel's Luke Cage"/>
   <follows rdf:resource="#My Hero Academia"/>
-  <had_stopped rdf:resource="#My Hero Academia"/>
   <follows rdf:resource="#Stranger Things"/>
   <follows rdf:resource="#Travelers (2016)"/>
   <follows rdf:resource="#Marvel's Iron Fist"/>
-  <had_stopped rdf:resource="#Marvel's Iron Fist"/>
   <follows rdf:resource="#Legion"/>
   <follows rdf:resource="#Marvel's The Defenders"/>
   <follows rdf:resource="#Money Heist"/>
@@ -5494,13 +5499,11 @@
   <follows rdf:resource="#Dark"/>
   <follows rdf:resource="#Tom Clancy's Jack Ryan"/>
   <follows rdf:resource="#You"/>
-  <had_stopped rdf:resource="#You"/>
   <follows rdf:resource="#The Rain"/>
   <follows rdf:resource="#Lost in Space (2018)"/>
   <follows rdf:resource="#Impulse"/>
   <follows rdf:resource="#The Haunting"/>
   <follows rdf:resource="#Elite"/>
-  <had_stopped rdf:resource="#Elite"/>
   <follows rdf:resource="#Nightflyers"/>
   <follows rdf:resource="#Paradise PD"/>
   <follows rdf:resource="#Bodyguard (2018)"/>
@@ -5513,7 +5516,6 @@
   <follows rdf:resource="#Formula 1: Drive to Survive"/>
   <follows rdf:resource="#Chernobyl"/>
   <follows rdf:resource="#How to Sell Drugs Online (Fast)"/>
-  <had_stopped rdf:resource="#How to Sell Drugs Online (Fast)"/>
   <follows rdf:resource="#The Society"/>
   <follows rdf:resource="#Locke &amp; Key"/>
   <follows rdf:resource="#The Mandalorian"/>
@@ -5521,12 +5523,10 @@
   <follows rdf:resource="#The Witcher"/>
   <follows rdf:resource="#Extracurricular"/>
   <follows rdf:resource="#Let's Go Quintuplets"/>
-  <had_stopped rdf:resource="#Let's Go Quintuplets"/>
   <follows rdf:resource="#Snowpiercer"/>
   <follows rdf:resource="#The Sandman"/>
   <follows rdf:resource="#Reacher"/>
   <follows rdf:resource="#The I-Land"/>
-  <had_stopped rdf:resource="#The I-Land"/>
   <follows rdf:resource="#Living with Yourself"/>
   <follows rdf:resource="#Mare of Easttown"/>
   <follows rdf:resource="#Alex Rider"/>
@@ -5536,13 +5536,10 @@
   <follows rdf:resource="#Unorthodox"/>
   <follows rdf:resource="#Alice in Borderland (2020)"/>
   <follows rdf:resource="#Outer Banks"/>
-  <had_stopped rdf:resource="#Outer Banks"/>
   <follows rdf:resource="#Behind Her Eyes"/>
-  <had_stopped rdf:resource="#Behind Her Eyes"/>
   <follows rdf:resource="#Squid Game"/>
   <follows rdf:resource="#The Queen's Gambit"/>
   <follows rdf:resource="#Monster (2022)"/>
-  <had_stopped rdf:resource="#Monster (2022)"/>
   <follows rdf:resource="#The Last of Us"/>
   <follows rdf:resource="#ONE PIECE (2023)"/>
   <follows rdf:resource="#Citadel"/>
@@ -5556,9 +5553,7 @@
   <follows rdf:resource="#Florida Man"/>
   <follows rdf:resource="#Kaleidoscope (2023)"/>
   <follows rdf:resource="#The Marked Heart"/>
-  <had_stopped rdf:resource="#The Marked Heart"/>
   <follows rdf:resource="#Who is Erin Carter?"/>
-  <had_stopped rdf:resource="#Who is Erin Carter?"/>
   <follows rdf:resource="#Physical: 100"/>
   <follows rdf:resource="#FUBAR"/>
   <follows rdf:resource="#Who Were We Running From?"/>
@@ -14503,6 +14498,7 @@
 
 <owl:NamedIndividual rdf:about="#Arrow">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4325893">
@@ -14571,6 +14567,7 @@
 
 <owl:NamedIndividual rdf:about="#Sword Art Online">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4350133">
@@ -16923,6 +16920,7 @@
 
 <owl:NamedIndividual rdf:about="#Narcos">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4920750">
@@ -17459,6 +17457,7 @@
 
 <owl:NamedIndividual rdf:about="#American Gods">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5088686">
@@ -18663,6 +18662,7 @@
 
 <owl:NamedIndividual rdf:about="#My Hero Academia">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5465180">
@@ -19035,6 +19035,7 @@
 
 <owl:NamedIndividual rdf:about="#Marvel's Luke Cage">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5545823">
@@ -19647,6 +19648,7 @@
 
 <owl:NamedIndividual rdf:about="#Marvel's Iron Fist">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5777788">
@@ -19687,6 +19689,7 @@
 
 <owl:NamedIndividual rdf:about="#3%">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5787121">
@@ -21323,6 +21326,7 @@
 
 <owl:NamedIndividual rdf:about="#You">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6461783">
@@ -21631,6 +21635,7 @@
 
 <owl:NamedIndividual rdf:about="#America's Got Talent">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6591348">
@@ -22111,6 +22116,7 @@
 
 <owl:NamedIndividual rdf:about="#Elite">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6671792">
@@ -23287,6 +23293,7 @@
 
 <owl:NamedIndividual rdf:about="#How to Sell Drugs Online (Fast)">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7121781">
@@ -23563,6 +23570,7 @@
 
 <owl:NamedIndividual rdf:about="#The I-Land">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7327799">
@@ -24479,6 +24487,7 @@
 
 <owl:NamedIndividual rdf:about="#Outer Banks">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7655674">
@@ -24803,6 +24812,7 @@
 
 <owl:NamedIndividual rdf:about="#Monster (2022)">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7974291">
@@ -25087,6 +25097,7 @@
 
 <owl:NamedIndividual rdf:about="#Behind Her Eyes">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8148546">
@@ -26047,6 +26058,7 @@
 
 <owl:NamedIndividual rdf:about="#The Marked Heart">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9068877">
@@ -26275,6 +26287,7 @@
 
 <owl:NamedIndividual rdf:about="#Who is Erin Carter?">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9279985">
@@ -29024,6 +29037,7 @@
 
 <owl:NamedIndividual rdf:about="#Let's Go Quintuplets">
   <rdf:type rdf:resource="#TVShow"/>
+  <is_stopped_by rdf:resource="#22659137"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#Alex Rider">
@@ -29040,216 +29054,212 @@
 
 <owl:NamedIndividual rdf:about="#31382081">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9247265"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31403030">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9333705"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31413412">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6104951"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31417213">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6104952"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31440434">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6172297"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31529533">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6778625"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31616851">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#7620104"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31802354">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9138258"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31913600">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#5626064"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#31949646">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#5765511"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32171243">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#6576173"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32197192">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9100817"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32395954">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238600"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32406536">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238601"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32421533">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238602"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32426747">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9238603"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32606931">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9354873"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32621287">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9577091"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32840118">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9010223"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#32847523">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9010224"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33012136">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607712"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33025590">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607716"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33025625">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607716"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33033320">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9607718"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33237592">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9706788"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33337268">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9079005"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33431516">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#8987962"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33676717">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564639"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33681004">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564639"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33944060">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564626"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33944073">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564626"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#33962635">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9564630"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34024327">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#9782581"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34666001">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#10002429"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#34759499">
   <rdf:type rdf:resource="#Comment"/>
-  <posts rdf:resource="#22659137"/>
+  <posts_by rdf:resource="#22659137"/>
   <comments_on rdf:resource="#10002433"/>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#33">
-  <rdf:type rdf:resource="#Emotion"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9279985-22659137-33">
