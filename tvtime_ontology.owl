@@ -22,10 +22,10 @@
 <owl:ObjectProperty rdf:about="#posts_by">
   <rdfs:domain rdf:resource="#Comment"/>
   <rdfs:range rdf:resource="#User"/>
-  <owl:inverseOf rdf:resource="#posts_comment"/>
+  <owl:inverseOf rdf:resource="#user_posts_comment"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#posts_comment">
+<owl:ObjectProperty rdf:about="#user_posts_comment">
   <rdfs:domain rdf:resource="#User"/>
   <rdfs:range rdf:resource="#Comment"/>
   <owl:inverseOf rdf:resource="#posts_by"/>
@@ -34,6 +34,13 @@
 <owl:ObjectProperty rdf:about="#comments_on">
   <rdfs:domain rdf:resource="#Comment"/>
   <rdfs:range rdf:resource="#Episode"/>
+  <owl:inverseOf rdf:resource="#is_commented_on_by"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_commented_on_by">
+  <rdfs:domain rdf:resource="#Episode"/>
+  <rdfs:range rdf:resource="#Comment"/>
+  <owl:inverseOf rdf:resource="#comments_on"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#follows">
@@ -63,24 +70,52 @@
   <rdfs:range rdf:resource="#Episode"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#rated_by">
+<owl:ObjectProperty rdf:about="#rated_by_user">
   <rdfs:domain rdf:resource="#Rating"/>
   <rdfs:range rdf:resource="#User"/>
+  <owl:inverseOf rdf:resource="#user_rates"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#rates">
+<owl:ObjectProperty rdf:about="#user_rates">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Rating"/>
+  <owl:inverseOf rdf:resource="#rated_by_user"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#rates_episodes">
   <rdfs:domain rdf:resource="#Rating"/>
   <rdfs:range rdf:resource="#Episode"/>
+  <owl:inverseOf rdf:resource="#is_rated_by"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_rated_by">
+  <rdfs:domain rdf:resource="#Episode"/>
+  <rdfs:range rdf:resource="#Rating"/>
+  <owl:inverseOf rdf:resource="#rates_episodes"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#expressed_by">
   <rdfs:domain rdf:resource="#Emotion"/>
   <rdfs:range rdf:resource="#User"/>
+  <owl:inverseOf rdf:resource="#user_expresses"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#user_expresses">
+  <rdfs:domain rdf:resource="#User"/>
+  <rdfs:range rdf:resource="#Emotion"/>
+  <owl:inverseOf rdf:resource="#expressed_by"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#evokes">
   <rdfs:domain rdf:resource="#Emotion"/>
   <rdfs:range rdf:resource="#Episode"/>
+  <owl:inverseOf rdf:resource="#is_evoked_by"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_evoked_by">
+  <rdfs:domain rdf:resource="#Episode"/>
+  <rdfs:range rdf:resource="#Emotion"/>
+  <owl:inverseOf rdf:resource="#evokes"/>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="#aPourTitre">
@@ -63665,113 +63700,113 @@
 
 <owl:NamedIndividual rdf:about="#9300505-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9300505"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9300505"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791888-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791888"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791888"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8287133-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8287133"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8287133"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8868130-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8868130"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8868130"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620099-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620099"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620099"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514939-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514939"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514939"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505045-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505045"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505045"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9759689-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9759689"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9759689"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303188-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303188"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303188"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4919988-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#4919988"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#4919988"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7687400-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7687400"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7687400"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288822-22659137-27">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288822"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288822"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8571459-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8571459"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8571459"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7330252-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7330252"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7330252"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238601-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238601"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238601"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778614-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778614"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778614"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#6778614"/>
@@ -63781,22 +63816,22 @@
 
 <owl:NamedIndividual rdf:about="#5765514-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5765514"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5765514"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514943-22659137-27">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514943"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514943"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778614-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778614"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778614"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
@@ -63806,85 +63841,85 @@
 
 <owl:NamedIndividual rdf:about="#9986637-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986637"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986637"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797410-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797410"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797410"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9300505-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9300505"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9300505"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607719-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607719"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607719"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797408-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797408"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797408"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6677615-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6677615"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6677615"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514942-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514942"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514942"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010227-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010227"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010227"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9300510-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9300510"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9300510"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778622-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778622"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778622"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435211-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435211"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435211"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607716-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607716"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607716"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -63894,43 +63929,43 @@
 
 <owl:NamedIndividual rdf:about="#9986639-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986639"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986639"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8320011-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8320011"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8320011"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082153-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082153"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082153"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8481420-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8481420"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8481420"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9476217-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9476217"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9476217"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5101005-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5101005"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5101005"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#5101005"/>
@@ -63940,463 +63975,463 @@
 
 <owl:NamedIndividual rdf:about="#7620105-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620105"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620105"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9782581-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9782581"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9782581"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160488-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160488"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160488"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986630-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986630"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986630"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882279-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882279"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882279"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7537283-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7537283"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7537283"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505046-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505046"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505046"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4919989-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#4919989"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#4919989"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079008-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079008"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079008"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010229-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010229"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010229"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576179-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576179"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576179"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303194-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303194"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303194"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9138256-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9138256"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9138256"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706786-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706786"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706786"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079002-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079002"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079002"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797409-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797409"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797409"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9476216-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9476216"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9476216"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765176-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765176"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765176"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079005-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079005"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079005"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986631-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986631"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986631"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514937-22659137-27">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514937"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514937"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564628-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564628"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564628"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160488-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160488"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160488"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#10002428-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#10002428"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#10002428"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9931638-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9931638"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9931638"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9577094-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9577094"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9577094"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9300512-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9300512"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9300512"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9279985-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9279985"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9279985"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576170-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576170"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576170"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9300511-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9300511"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9300511"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685349-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685349"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685349"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303190-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303190"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303190"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778623-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778623"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778623"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620100-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620100"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620100"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7110141-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7110141"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7110141"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765174-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765174"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765174"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9687833-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9687833"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9687833"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685347-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685347"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685347"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288822-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288822"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288822"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485570-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485570"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485570"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9247263-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9247263"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9247263"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7327832-22659137-1">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7327832"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7327832"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685345-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685345"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685345"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6678938-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6678938"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6678938"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010224-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010224"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010224"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505047-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505047"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505047"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303185-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303185"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303185"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238602-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238602"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238602"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435212-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435212"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435212"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9577093-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9577093"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9577093"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8318242-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8318242"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8318242"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706788-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706788"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706788"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6678438-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6678438"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6678438"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620098-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620098"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620098"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505051-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505051"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505051"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8355786-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8355786"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8355786"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9100823-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9100823"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9100823"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160491-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160491"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160491"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8522047-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8522047"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8522047"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620097-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620097"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620097"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564638-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564638"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564638"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620104-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620104"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620104"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514936-22659137-27">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514936"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514936"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6690283-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6690283"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6690283"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564626-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564626"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564626"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485560-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485560"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485560"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#7485560"/>
@@ -64406,85 +64441,85 @@
 
 <owl:NamedIndividual rdf:about="#9010225-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010225"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010225"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8324652-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8324652"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8324652"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6538598-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6538598"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6538598"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7110137-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7110137"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7110137"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9942689-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9942689"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9942689"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9217099-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9217099"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9217099"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778619-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778619"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778619"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435215-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435215"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435215"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9138254-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9138254"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9138254"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9590369-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9590369"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9590369"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238603-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238603"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238603"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791893-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791893"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791893"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -64494,134 +64529,134 @@
 
 <owl:NamedIndividual rdf:about="#9986638-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986638"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986638"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288833-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288833"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288833"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9742979-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9742979"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9742979"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685346-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685346"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685346"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7620102-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7620102"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7620102"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607720-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607720"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607720"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778620-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778620"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778620"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#10002429-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#10002429"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#10002429"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9476218-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9476218"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9476218"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9068877-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9068877"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9068877"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9457880-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9457880"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9457880"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485560-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485560"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485560"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9100820-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9100820"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9100820"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485564-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485564"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485564"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082152-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082152"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082152"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986636-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986636"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986636"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9138258-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9138258"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9138258"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082148-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082148"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082148"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882277-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882277"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882277"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#9882277"/>
@@ -64631,15 +64666,15 @@
 
 <owl:NamedIndividual rdf:about="#6610101-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6610101"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6610101"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9743653-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743653"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743653"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#9743653"/>
@@ -64649,85 +64684,85 @@
 
 <owl:NamedIndividual rdf:about="#9743653-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743653"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743653"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765175-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765175"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765175"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765177-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765177"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765177"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9247265-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9247265"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9247265"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882280-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882280"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882280"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642554-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642554"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642554"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797406-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797406"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797406"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7088256-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7088256"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7088256"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9577092-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9577092"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9577092"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9333705-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9333705"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9333705"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642554-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642554"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642554"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797411-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797411"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797411"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -64737,8 +64772,8 @@
 
 <owl:NamedIndividual rdf:about="#1199791-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#1199791"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#1199791"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
@@ -64748,183 +64783,183 @@
 
 <owl:NamedIndividual rdf:about="#660911-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#660911"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#660911"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9100822-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9100822"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9100822"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9457880-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9457880"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9457880"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9743656-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743656"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743656"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#10002431-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#10002431"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#10002431"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6636942-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6636942"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6636942"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797405-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797405"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797405"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303194-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303194"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303194"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986635-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986635"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986635"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576176-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576176"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576176"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564629-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564629"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564629"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5692428-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5692428"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5692428"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564625-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564625"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564625"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#10002433-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#10002433"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#10002433"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435218-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435218"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435218"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8830735-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8830735"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8830735"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7092410-22659137-27">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7092410"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7092410"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564639-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564639"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564639"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6104952-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6104952"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6104952"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082147-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082147"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082147"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5765513-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5765513"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5765513"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079008-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079008"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079008"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706785-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706785"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706785"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435217-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435217"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435217"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765173-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765173"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765173"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5755397-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5755397"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5755397"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -64934,99 +64969,99 @@
 
 <owl:NamedIndividual rdf:about="#1084221-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#1084221"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#1084221"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5765511-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5765511"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5765511"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576181-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576181"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576181"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010222-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010222"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010222"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9590369-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9590369"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9590369"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7070899-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7070899"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7070899"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9782583-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9782583"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9782583"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9577090-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9577090"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9577090"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7579002-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7579002"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7579002"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882275-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882275"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882275"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079003-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079003"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079003"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7192711-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7192711"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7192711"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5626064-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5626064"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5626064"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706787-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706787"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706787"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -65036,43 +65071,43 @@
 
 <owl:NamedIndividual rdf:about="#9986640-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986640"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986640"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685349-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685349"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685349"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6113564-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6113564"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6113564"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435211-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435211"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435211"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9782582-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9782582"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9782582"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4919987-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#4919987"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#4919987"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#4919987"/>
@@ -65082,589 +65117,589 @@
 
 <owl:NamedIndividual rdf:about="#9564631-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564631"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564631"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485567-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485567"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485567"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082151-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082151"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082151"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#10002432-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#10002432"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#10002432"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303193-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303193"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303193"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9354873-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9354873"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9354873"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9931637-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9931637"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9931637"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564640-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564640"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564640"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791889-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791889"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791889"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607718-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607718"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607718"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8868132-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8868132"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8868132"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9005054-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9005054"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9005054"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8681177-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8681177"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8681177"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9476219-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9476219"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9476219"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6678940-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6678940"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6678940"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607712-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607712"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607712"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8868133-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8868133"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8868133"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9247262-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9247262"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9247262"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8987962-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8987962"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8987962"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765180-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765180"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765180"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9971637-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9971637"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9971637"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7578999-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7578999"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7578999"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288823-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288823"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288823"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6172297-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6172297"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6172297"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9159818-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9159818"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9159818"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685348-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685348"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685348"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8197081-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8197081"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8197081"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642555-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642555"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642555"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8467162-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8467162"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8467162"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9931634-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9931634"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9931634"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986638-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986638"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986638"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079008-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079008"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079008"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9100821-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9100821"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9100821"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435214-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435214"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435214"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7192711-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7192711"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7192711"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791890-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791890"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791890"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303195-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303195"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303195"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8829338-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8829338"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8829338"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685345-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685345"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685345"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160493-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160493"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160493"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8485174-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8485174"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8485174"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791892-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791892"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791892"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765175-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765175"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765175"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564630-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564630"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564630"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9743651-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743651"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743651"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082154-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082154"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082154"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#4919990-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#4919990"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#4919990"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160489-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160489"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160489"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9138257-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9138257"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9138257"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7110136-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7110136"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7110136"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607715-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607715"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607715"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6647385-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6647385"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6647385"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303192-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303192"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303192"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079004-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079004"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079004"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576139-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576139"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576139"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765179-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765179"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765179"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5748834-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5748834"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5748834"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9743652-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743652"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743652"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160494-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160494"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160494"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8320006-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8320006"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8320006"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010223-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010223"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010223"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9577091-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9577091"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9577091"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160490-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160490"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160490"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505049-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505049"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505049"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9435216-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9435216"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9435216"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6538598-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6538598"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6538598"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9100817-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9100817"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9100817"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8830735-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8830735"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8830735"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303189-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303189"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303189"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514941-22659137-1">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514941"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514941"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303191-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303191"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303191"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8514935-22659137-1">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8514935"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8514935"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8444132-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8444132"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8444132"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9931635-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9931635"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9931635"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882277-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882277"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882277"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8868129-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8868129"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8868129"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607717-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607717"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607717"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6104951-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6104951"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6104951"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7579004-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7579004"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7579004"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505047-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505047"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505047"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079003-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079003"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079003"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288825-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288825"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288825"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5748838-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5748838"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5748838"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8580927-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8580927"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8580927"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#8580927"/>
@@ -65674,29 +65709,29 @@
 
 <owl:NamedIndividual rdf:about="#7036615-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7036615"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7036615"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9138252-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9138252"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9138252"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082155-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082155"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082155"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706783-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706783"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706783"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#9706783"/>
@@ -65706,239 +65741,239 @@
 
 <owl:NamedIndividual rdf:about="#9743658-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743658"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743658"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9759689-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9759689"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9759689"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9505050-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9505050"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9505050"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607714-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607714"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607714"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238600-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238600"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238600"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6172293-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6172293"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6172293"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010228-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010228"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010228"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607713-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607713"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607713"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9607713-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9607713"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9607713"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9247268-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9247268"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9247268"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882278-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882278"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882278"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238599-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238599"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238599"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9082149-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9082149"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9082149"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#5001793-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#5001793"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#5001793"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9797407-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9797407"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9797407"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778625-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778625"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778625"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642558-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642558"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642558"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778626-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778626"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778626"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986637-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986637"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986637"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079006-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079006"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079006"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9706788-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9706788"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9706788"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9079007-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9079007"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9079007"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791891-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791891"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791891"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7579000-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7579000"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7579000"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6933995-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6933995"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6933995"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010222-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010222"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010222"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7110139-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7110139"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7110139"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9882274-22659137-28">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9882274"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9882274"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8371186-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8371186"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8371186"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8759471-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8759471"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8759471"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6576173-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6576173"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6576173"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9564642-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9564642"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9564642"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9333705-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9333705"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9333705"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9476213-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9476213"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9476213"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
@@ -65948,8 +65983,8 @@
 
 <owl:NamedIndividual rdf:about="#1084211-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#1084211"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#1084211"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
@@ -65959,22 +65994,22 @@
 
 <owl:NamedIndividual rdf:about="#1084201-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#1084201"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#1084201"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9765177-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9765177"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9765177"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#6778611-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6778611"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6778611"/>
   <rdf:type rdf:resource="#Emotion"/>
   <expressed_by rdf:resource="#22659137"/>
   <evokes rdf:resource="#6778611"/>
@@ -65984,127 +66019,127 @@
 
 <owl:NamedIndividual rdf:about="#6678437-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#6678437"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#6678437"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8868131-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8868131"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8868131"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9986639-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9986639"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9986639"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9238603-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9238603"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9238603"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642556-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642556"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642556"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9685346-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9685346"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9685346"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9642557-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9642557"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9642557"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9303186-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9303186"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9303186"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9160492-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9160492"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9160492"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9247264-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9247264"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9247264"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9010226-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9010226"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9010226"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9288833-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9288833"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9288833"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#9743654-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#9743654"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#9743654"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#7485570-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#7485570"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#7485570"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791894-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791894"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791894"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8791889-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8791889"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8791889"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8324651-22659137-3">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8324651"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8324651"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</aPourNote>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#8522047-22659137-29">
   <rdf:type rdf:resource="#Rating"/>
-  <rated_by rdf:resource="#22659137"/>
-  <rates rdf:resource="#8522047"/>
+  <rated_by_user rdf:resource="#22659137"/>
+  <rates_episodes rdf:resource="#8522047"/>
   <aPourNote rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</aPourNote>
 </owl:NamedIndividual>
 
